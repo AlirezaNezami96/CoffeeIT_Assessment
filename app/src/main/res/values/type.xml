@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.CoffeeIT.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+
+    </style>
+
+    <style name="TextAppearance.CoffeeIT.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+
+    </style>
+
+    <style name="TextAppearance.CoffeeIT.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+
+    </style>
+
+    <style name="TextAppearance.CoffeeIT.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+
+    </style>
+
+    <style name="TextAppearance.CoffeeIT.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+
+    </style>
+
+    <style name="TextAppearance.CoffeeIT.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.CoffeeIT.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+
+    </style>
+
+    <style name="TextAppearance.CoffeeIT.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+
+    </style>
+
+    <style name="TextAppearance.CoffeeIT.Body1" parent="TextAppearance.MaterialComponents.Body1">
+
+    </style>
+
+    <style name="TextAppearance.CoffeeIT.Body2" parent="TextAppearance.MaterialComponents.Body2">
+
+    </style>
+
+    <style name="TextAppearance.CoffeeIT.Button" parent="TextAppearance.MaterialComponents.Button">
+
+    </style>
+
+    <style name="TextAppearance.CoffeeIT.Caption" parent="TextAppearance.MaterialComponents.Caption">
+
+    </style>
+
+    <style name="TextAppearance.CoffeeIT.Overline" parent="TextAppearance.MaterialComponents.Overline">
+
+    </style>
+</resources>

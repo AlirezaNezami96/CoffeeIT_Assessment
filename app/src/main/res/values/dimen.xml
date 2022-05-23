@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textSizeTitleBig">26sp</dimen>
+    <dimen name="toolbarTextSize">16sp</dimen>
+    <dimen name="textSizeTitleItem">16sp</dimen>
+    <dimen name="buttonTextSize">16sp</dimen>
+    <dimen name="buttonVerticalPadding">32dp</dimen>
+    <dimen name="buttonMargin">16dp</dimen>
+    <dimen name="marginDefaultGuideline">16dp</dimen>
+    <dimen name="itemVerticalMargin">8dp</dimen>
+    <dimen name="layoutCornerRadius">5dp</dimen>
+
+</resources>

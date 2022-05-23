@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="alireza.nezami.coffeeit_assessment.domain.model.coffeeMachine.CoffeeTypes" />
+    </data>
+
+    <LinearLayout
+        style="@style/ItemLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/image_coffee_machine"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="centerCrop"
+            app:setCircleShape="@{true}"
+            app:setImageUrl="@{item.icon}" />
+
+
+        <TextView
+            android:id="@+id/title_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:textAppearance="@style/TitleItem"
+            tools:text="@{item.name}" />
+
+
+    </LinearLayout>
+</layout>

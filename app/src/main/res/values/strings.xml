@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CoffeeIT_Assessment</string>
+    <string name="tab_the_machine_to_start">Tab the machine to start</string>
+    <string name="order_update_last_choice">Order/Update last choice</string>
+    <string name="select_your_style">Select your style</string>
+    <string name="select_your_size">Select your size</string>
+    <string name="select_your_extra">Select your extra\'s</string>
+    <string name="overview">Overview</string>
+    <string name="edit">Edit</string>
+    <string name="brew_your_coffee">Brew your coffee</string>
+    <string name="create_new_coffee">"Create new "</string>
+</resources>

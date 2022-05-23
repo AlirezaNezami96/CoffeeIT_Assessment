@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/NFCFragment">
+
+    <fragment
+        android:id="@+id/NFCFragment"
+        android:name="alireza.nezami.coffeeit_assessment.presentation.ui.nfc.NFCFragment"
+        android:label="Dark Roasted Beans">
+        <action
+            android:id="@+id/action_NFCFragment_to_styleFragment"
+            app:destination="@id/styleFragment" />
+        <action
+            android:id="@+id/action_NFCFragment_to_sizeFragment"
+            app:destination="@id/sizeFragment" />
+        <action
+            android:id="@+id/action_NFCFragment_to_extraFragment"
+            app:destination="@id/extraFragment" />
+        <action
+            android:id="@+id/action_NFCFragment_to_overviewFragment"
+            app:destination="@id/overviewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/styleFragment"
+        android:name="alireza.nezami.coffeeit_assessment.presentation.ui.style.StyleFragment"
+        android:label="Brew with Lex">
+        <argument
+            android:name="coffee"
+            app:argType="alireza.nezami.coffeeit_assessment.domain.model.coffeeMachine.CoffeeMachine" />
+        <action
+            android:id="@+id/action_styleFragment_to_sizeFragment"
+            app:destination="@id/sizeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sizeFragment"
+        android:name="alireza.nezami.coffeeit_assessment.presentation.ui.size.SizeFragment"
+        android:label="Brew with Lex">
+        <argument
+            android:name="type"
+            app:argType="alireza.nezami.coffeeit_assessment.domain.model.coffeeMachine.CoffeeTypes" />
+        <action
+            android:id="@+id/action_sizeFragment_to_extraFragment"
+            app:destination="@id/extraFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/extraFragment"
+        android:name="alireza.nezami.coffeeit_assessment.presentation.ui.extra.ExtraFragment"
+        android:label="Brew with Lex">
+
+        <argument
+            android:name="type"
+            app:argType="alireza.nezami.coffeeit_assessment.domain.model.coffeeMachine.CoffeeTypes" />
+        <action
+            android:id="@+id/action_extraFragment_to_overviewFragment"
+            app:destination="@id/overviewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="alireza.nezami.coffeeit_assessment.presentation.ui.overview.OverviewFragment"
+        android:label="Brew with Lex" >
+        <action
+            android:id="@+id/action_overviewFragment_to_extraFragment"
+            app:destination="@id/extraFragment" />
+        <action
+            android:id="@+id/action_overviewFragment_to_sizeFragment"
+            app:destination="@id/sizeFragment" />
+        <action
+            android:id="@+id/action_overviewFragment_to_styleFragment"
+            app:destination="@id/styleFragment" />
+        <action
+            android:id="@+id/action_overviewFragment_to_NFCFragment"
+            app:destination="@id/NFCFragment" />
+    </fragment>
+
+</navigation>

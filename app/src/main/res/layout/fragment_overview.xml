@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="alireza.nezami.coffeeit_assessment.domain.model.coffeeMachine.SelectedCoffee" />
+
+        <variable
+            name="viewModel"
+            type="alireza.nezami.coffeeit_assessment.presentation.ui.overview.OverviewViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title_header"
+            style="@style/Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TitleBig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/overview" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_finish"
+            app:layout_constraintTop_toBottomOf="@+id/title_header">
+
+            <LinearLayout
+                style="@style/ItemLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    isVisible="@{item.selectedSize!=null}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="centerCrop"
+                        app:setCircleShape="@{true}"
+                        app:setImageUrl="@{item.selectedType.icon}" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TitleItem"
+                        tools:text="@{item.selectedType.name}" />
+
+
+                    <TextView
+                        android:id="@+id/text_edit_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:padding="16dp"
+                        android:textAppearance="@style/TitleItem"
+                        tools:text="@string/edit" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="centerCrop"
+                        app:setCircleShape="@{true}"
+                        app:setImageUrl="@{item.selectedSize.icon}" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TitleItem"
+                        tools:text="@{item.selectedSize.name}" />
+
+                    <TextView
+                        android:id="@+id/text_edit_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:padding="16dp"
+                        android:textAppearance="@style/TitleItem"
+                        tools:text="@string/edit" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    isVisible="@{item.firstSelectedExtra != null}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="centerCrop"
+                        app:setCircleShape="@{true}"
+                        app:setImageUrl="@{item.firstSelectedExtra.extra.icon}" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="@{item.firstSelectedExtra.extra.name}"
+                        android:textAppearance="@style/TitleItem" />
+
+                    <TextView
+                        android:id="@+id/text_edit_extra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:padding="16dp"
+                        android:textAppearance="@style/TitleItem"
+                        tools:text="@string/edit" />
+
+                </LinearLayout>
+
+                <View
+                    isVisible="@{item.firstSelectedExtra != null}"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/white" />
+
+                <RadioButton
+                    style="@style/overview_radio_button"
+                    isVisible="@{item.firstSelectedExtra != null}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="@{item.firstSelectedExtra.sub.name}" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    isVisible="@{item.secondSelectedExtra != null}"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    isVisible="@{item.secondSelectedExtra != null}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="centerCrop"
+                        app:setCircleShape="@{true}"
+                        app:setImageUrl="@{item.secondSelectedExtra.extra.icon}" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="@{item.secondSelectedExtra.extra.name}"
+                        android:textAppearance="@style/TitleItem" />
+
+                    <TextView
+                        android:id="@+id/text_edit_second_extra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:padding="16dp"
+                        android:textAppearance="@style/TitleItem"
+                        tools:text="@string/edit" />
+
+                </LinearLayout>
+
+                <View
+                    isVisible="@{item.secondSelectedExtra != null}"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/white" />
+
+                <RadioButton
+                    style="@style/overview_radio_button"
+                    isVisible="@{item.secondSelectedExtra != null}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="@{item.secondSelectedExtra.sub.name}" />
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/button_finish"
+            style="@style/TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/brew_your_coffee"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
